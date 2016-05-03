@@ -3,17 +3,6 @@ from random import SystemRandom
 def c_shift_l (number, shift, base):
     return ((number << shift) | ((number << shift) >> base)) & ((1 << base) - 1)
 
-class OpenSSL:
-    def __init__ (self):
-        self.rand = rand()
-        return
-
-class rand:
-    def __init__ (self):
-        return
-
-    def bytes (self, block_size):
-        return block_size * chr(0)
 
 class cypher:
     def __init__ (self, key = 0x0123456789abcdeffedcba98765432100123456789abcdeffedcba9876543210, padding_type='PKCS', crypt_type='ECB'):
@@ -59,7 +48,6 @@ class cypher:
 #        return self.padding(str)
 
     def randomblock(self):
-
         return OpenSSL.rand.bytes(int(self.block_size))
 
     def depadding (self, message):
@@ -363,8 +351,7 @@ hw = "Hello, world!"
 print (hw)
 import csv
 
-#import OpenSSL
-OpenSSL = OpenSSL()
+import OpenSSL
 
 cyph = cypher(0x1123456789abcdeffedcba98765432101123456789abcdeffedcba9876543210,"PKCS","CBC")
 cyph.gen_key()
