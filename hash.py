@@ -76,7 +76,7 @@ class hash:
             self.v.append(((self.counter &((0x1f) << 5 *((i - 12) // 2))) >> (5 * ((i - 12) // 2))) ^ self.c[i-8])
         #rounds
         for i in range (0,14):
-            print (self.v)
+#            print (self.v)
             self.round(i, mess);
         #finalization
         for i in range (0,8):
